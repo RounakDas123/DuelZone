@@ -1,0 +1,110 @@
+/* Wrapper around whole auth page */
+.wrapper {
+  max-width: 440px;
+  margin: 60px auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #1e1e2f, #2c3e50);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Sliding area for forms */
+.slider {
+  display: flex;
+  width: 200%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.shiftLeft {
+  transform: translateX(-50%);
+}
+
+.slide {
+  width: 50%;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(to right bottom, #20232a, #2c3e50);
+  color: white;
+}
+
+/* Forms */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.form h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+/* Input Fields */
+.form input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #03dac5;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  color: #fff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form input:focus {
+  border-color: #00bfa5;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 8px #00bfa5, 0 0 15px rgba(0, 191, 165, 0.4);
+}
+
+/* Placeholder Text */
+.form input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Button with gradient hover */
+.form button {
+  background: linear-gradient(135deg, #03dac5, #00bfa5);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.form button:hover {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 255, 200, 0.4);
+}
+
+/* Toggle section between login/signup */
+.toggle {
+  display: flex;
+  justify-content: space-evenly;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.toggle button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #2e2e2e;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.toggle button:disabled {
+  background: linear-gradient(135deg, #03dac5, #00bfa5);
+  color: #000;
+}
