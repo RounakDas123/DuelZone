@@ -12,7 +12,17 @@ A fullstack multiplayer game platform supporting solo, friend, and AI matches. B
 duelzone/
 │
 ├── backend/ # Node.js + Express + MongoDB backend
+│ ├── models/ # Mongoose models
+│ ├── routes/ # Express route handlers
+│ ├── controllers/ # Controller logic
+│
 ├── frontend/ # React + Zustand + Pixi.js + Howler.js frontend
+│ ├── pages/ # Lobby, Leaderboards, Profile, etc.
+│ ├── navbar/ # Navigation bar and its styling
+│ ├── store/ # Zustand stores
+│ ├── auth/ # AuthPage component
+│ ├── routes.jsx # App routing config
+│
 ├── docker-compose.yml
 
 ---
@@ -50,6 +60,36 @@ duelzone/
 ### 📱 Cross-Platform Readiness
 - Designed for both desktop and mobile usage
 
+---
+
+## 🧩 Phase 2 Features
+
+### 🧭 Navigation (NavBar)
+
+- Global NavBar shown on all pages except `/`
+- Hamburger menu with:
+  - `View Profile`
+  - `Leaderboards`
+  - `Logout`
+
+### 👤 View & Edit Profile
+
+- Dedicated **View Profile** page
+- Fields added to user profile:
+  - `username`
+  - `bio`
+  - `avatarUrl`
+  - `country`
+  - `favoriteGameMode`
+- Fetch and update user info from database
+- CSS module styling with responsive layout
+
+### 🧪 Lobby Page
+
+- `/lobby` replaces `/dashboard` as main page post-login
+- Includes "Play vs AI" and "Play with Friend" buttons
+- Central game hub for upcoming features
+- Implementing Socket.io in basic way for 'createRoom', 'joinRoom' and 'disconnect' in backend
 ---
 
 ## 🚀 Running the Project

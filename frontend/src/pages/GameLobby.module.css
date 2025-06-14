@@ -1,0 +1,29 @@
+.lobbyContainer {
+  background: #1e1e2f;
+  color: white;
+  padding: 2rem;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.modeButtons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.modeButtons button {
+  background-color: #5a5af0;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modeButtons button:hover {
+  background-color: #4646d1;
+}

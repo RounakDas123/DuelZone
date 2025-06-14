@@ -1,0 +1,62 @@
+.container {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: linear-gradient(145deg, #2e2e3f, #1c1c2c);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #5a5af0;
+}
+
+.profileForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+input {
+  padding: 0.6rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background-color: #2c2c3e;
+  color: white;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #5a5af0;
+}
+
+.updateBtn {
+  padding: 0.75rem;
+  border: none;
+  background-color: #5a5af0;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.updateBtn:hover {
+  background-color: #4646d1;
+  transform: scale(1.02);
+}

@@ -60,4 +60,28 @@ const googleAuth = async (req, res) => {
   }
 };
 
-module.exports = { signup, login, googleAuth };
+const getProfile = async (req, res) => {
+  const { email } = req.params;
+  try {
+    const user = await User.findOne({ email }, '-password');
+    if (!user) return res.status(404).json({ message: "User not found" });
+    res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json({ message: "Error fetching profile" });
+  }
+};
+
+const updateProfile = async (req, res) => {
+  const { email } = req.params;
+  const updates = req.body;
+  try {
+    const user = await User.findOneAndUpdate({ email }, updates, { new: true });
+    if (!user) return res.status(404).json({ message: "User not found" });
+    res.status(200).json({ message: "Profile updated", user });
+  } catch (err) {
+    res.status(500).json({ message: "Error updating profile" });
+  }
+};
+
+module.exports = { signup, login, googleAuth, getProfile, updateProfile };
+

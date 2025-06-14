@@ -24,7 +24,7 @@ const LoginForm = () => {
         return;
       }
       toast.success(data.message);
-      navigate('/dashboard');
+      navigate('/lobby');
     } catch (err) {
       toast.error(err.message);
     }

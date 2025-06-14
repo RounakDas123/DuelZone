@@ -40,7 +40,7 @@ const GoogleAuthButton = ({ action }) => {
       });
       login(data.user, data.token);
       toast.success("Login successful");
-      navigate('/dashboard');
+      navigate('/lobby');
     } catch (err) {
       toast.error("Google login failed: " + err.message);
     }
