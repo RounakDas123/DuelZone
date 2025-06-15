@@ -10,8 +10,6 @@ services:
     volumes:
       - ./backend:/app
     command: npm run dev
-    depends_on:
-      - frontend
 
   frontend:
     build: ./frontend
@@ -25,5 +23,7 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
     command: npm start
+    depends_on:
+      - backend
 
 

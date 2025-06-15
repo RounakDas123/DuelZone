@@ -5,6 +5,7 @@ import GameLobby from './pages/GameLobby';
 import Leaderboards from './pages/Leaderboards';
 import NavBar from './navbar/NavBar';
 import ViewProfile from './pages/ViewProfile';
+import GameSolo from './pages/GameSolo';
 
 const RoutesConfig = () => {
   const location = useLocation();
@@ -18,6 +19,7 @@ const RoutesConfig = () => {
       <Route path="/lobby" element={<GameLobby />} />
       <Route path="/leaderboards" element={<Leaderboards />} />
       <Route path="/profile" element={<ViewProfile />} />
+      <Route path="/solo" element={<GameSolo />} />
     </Routes>
     </>
   );

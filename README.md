@@ -15,15 +15,19 @@ duelzone/
 │ ├── models/ # Mongoose models
 │ ├── routes/ # Express route handlers
 │ ├── controllers/ # Controller logic
+│ ├── sockets/ # Basic room/socket handling logic
 │
 ├── frontend/ # React + Zustand + Pixi.js + Howler.js frontend
-│ ├── pages/ # Lobby, Leaderboards, Profile, etc.
+│ ├── pages/ # Lobby, GameSolo, Leaderboards, Profile
 │ ├── navbar/ # Navigation bar and its styling
-│ ├── store/ # Zustand stores
-│ ├── auth/ # AuthPage component
+│ ├── store/ # Zustand auth/game state
+│ ├── auth/ # AuthPage component (Login/Signup)
+│ ├── sounds/ # Sound assets (shoot.wav, hit.wav, etc.)
+│ ├── GameSolo.jsx # Solo game logic with Pixi.js canvas
 │ ├── routes.jsx # App routing config
 │
 ├── docker-compose.yml
+├── .env files (frontend & backend)
 
 ---
 
@@ -90,6 +94,38 @@ duelzone/
 - Includes "Play vs AI" and "Play with Friend" buttons
 - Central game hub for upcoming features
 - Implementing Socket.io in basic way for 'createRoom', 'joinRoom' and 'disconnect' in backend
+
+---
+
+## 🎮 Phase 3: Solo Mode (Playable Game)
+
+### 🧱 Game Rendering
+
+- **Pixi.js** canvas rendered inside `GameSolo.jsx`
+- Player and enemy are rendered using `PIXI.Graphics`
+
+### 🎮 Controls & Mechanics
+
+- Player movement: `WASD` or arrow keys
+- Fire bullets with `Space` key
+- Clamp player inside canvas
+- Bullet collision detection
+- Health system (player & enemy)
+
+### 🧠 Basic Enemy AI
+
+- Enemy auto-chases player
+- Enemy damages player on collision
+- Enemy HP system and destruction with explosion animation
+
+### 🔊 Sound Effects (Howler.js)
+
+- `shoot.wav` for bullet fire
+- `hit.wav` for bullet/enemy or enemy/player collision
+- `explosion.wav` on enemy kill
+- `gameover.wav` and `win.wav` on loss/win
+- Sounds loaded from `public/sounds/`
+
 ---
 
 ## 🚀 Running the Project
@@ -102,6 +138,6 @@ duelzone/
 
 Build & Run (Docker Compose)
 docker-compose up --build
-Frontend: http://localhost:300
+Frontend: http://localhost:3000
 Backend: http://localhost:5000
 
